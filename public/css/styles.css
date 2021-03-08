@@ -1,0 +1,137 @@
+.adLogo{
+ margin-top:18%;
+}
+body{
+  background-image: linear-gradient(to bottom right, #e9f7f6, #ffffff, #e9f7f6);
+}
+nav{
+  background: #75CFCA !important;
+}
+nav  a{
+  color: #ffffff !important;
+}
+.IndexDetails{
+  background-color: #E9F7F6;
+  padding: 4%
+}
+.highlighReelVideo{
+margin-top: 45px;
+margin-bottom: 45px;
+}
+.socialIcons{
+  padding: 5px;
+}
+.Footer{
+  /* background-color: #E9F7F6; */
+  background-color: #75CFCA;
+}
+#emailInputFeild{
+  width:450px;
+}
+form{
+  padding: 5% 2% 5% 5%;
+}
+.socialMediaLinks{
+  padding: 10% 2% 5% 5%;
+}
+#emailFormSendButton{
+  background-color: #707070;
+  color:#ffffff;
+}
+#aboutFormSendButton{
+  background-color: #FF9E18;
+}
+.adNavLogo{
+width: 80px;  
+}
+/* #projectInformation{
+  margin-top: 12%;
+  margin-bottom: 5%;
+} */
+.ProjectImages{
+  background-color: #E9F7F6;
+  padding: 3% 0% 3% 0%;
+}
+.spaceAboveFooter{
+  height: 100px;
+}
+.ProjectUrls{
+  margin-top: 12%;
+}
+.additionalProjectInfoText{
+  margin-top: 8%;
+}
+.ProjectGitHub{
+  margin-top: 12%;
+}
+.projectNameSubheader{
+margin: 0%  1% 0% 1%;
+}
+.projectTitle{
+margin-bottom: 0%;
+margin-top: 6%;
+}
+.SalesPitch{
+  margin: 4% 0% 4% 0%;
+}
+.Gallery{
+  margin-top: 10%;
+}
+.AmeliaDavisHeadshot{
+  margin-top: 6%;
+}
+.uk-navbar-left{
+  padding-left: 5%;
+}
+
+.indexHeadshotAdavis{
+  height: 60%;
+  width: 60%;
+}
+.welcomeTextArea{
+  padding-top: 10%;
+}
+.workSectionImages{
+ border: #ffffff solid 8px;
+}
+.ComingSoonSection{
+  background-color: #E9F7F6;
+  color: #ffffff;
+  Padding: 14%
+}
+.BlogHeader{
+  padding:2%
+}
+.aboutMeLogoAD{
+  width: 25%;
+  height: 25%;
+}
+.aboutSocialMediaSection{
+  background-color: #E9F7F6;
+  padding: 4%;
+  /* align-items: center; */
+}
+.Gallery a:hover{
+  background: #ffffff; 
+  opacity: .3;
+
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+  #emailFormSendButton{
+   width: 100px;
+  }
+ 
+  .socialIcons{
+    width: 50px
+  }
+  .welcomeTextArea{
+    font-size: .75rem;
+  }
+}
