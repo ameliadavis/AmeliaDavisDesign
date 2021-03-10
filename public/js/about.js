@@ -13,7 +13,7 @@ $('form').on('submit', (e) => {
         text, 
     }
 
-    $.post('/uploads/', data, function() {
+    $.post('/MailDataServer', data, function() {
         console.log("this data is being sent to the server", data)
         
     })

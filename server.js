@@ -13,6 +13,9 @@ var PORT = process.env.PORT || 8080;
 
 // Requiring our models for syncing
 var db = require("./models");
+const sendMail = require('./public/js/mail')
+
+var path = require("path");
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -21,24 +24,13 @@ app.use(express.json());
 // Static directory
 app.use(express.static("public"));
 
-// Routes
-// =============================================================
-// require("./routes/html-routes.js")(app);
-// require("./routes/blog-api-routes.js")(app);
-// // require("./routes/post-api-routes.js")(app);
+// Post Route
+//===============================================================
+app.post('/MailDataServer', (req, res) => {
 
-// Syncing our sequelize models and then starting our Express app
-// // =============================================================
-// db.sequelize.sync({ force: true }).then(function() {
-//   app.listen(PORT, function() {
-//     console.log("App listening on PORT " + PORT);
-//   });
-// });
-app.post('/uploads/', (req, res) => {
+  console.log('upload route hit', req.body )
 
-  console.log('upload route hit' )
-
-   upload(req, res, (err) =>{
+   MailData(req, res, (err) =>{
       if(err){
           alert(err)
       } else {
@@ -49,18 +41,30 @@ app.post('/uploads/', (req, res) => {
           res.json({message:'message received!'})
           sendMail(req.body,)
       }
-  })
-  
-  
+  }) 
 })
 
-//Render the Index page on server run 
+// HTML Routes
+//  ================================================================
 app.get('/', (req, res)=>{
   res.sendFile(path.join(__dirname,'public', 'index.html'));
 })
 
+app.get("/MyWork", function(req, res) {
+  res.sendFile(path.join(__dirname, 'public', 'work.html'));
+});
+
+app.get("/about", function(req, res) {
+  res.sendFile(path.join(__dirname, 'public', 'about.html'));
+});
+
+app.get("/BlogHome", function(req, res) {
+  res.sendFile(path.join(__dirname, 'public', 'BlogHome.html'));
+});
+
 
 // Listener
+//==========================================================
 app.listen(PORT, ()=>{
   console.log('Server is running on PORT,' , PORT);
 })
