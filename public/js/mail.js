@@ -10,7 +10,6 @@ const auth = {
     }
 };
 
-let transporter = nodemailer.createTransport(auth);
 
 
 const transporter= nodemailer.createTransport(mailGun(auth));
