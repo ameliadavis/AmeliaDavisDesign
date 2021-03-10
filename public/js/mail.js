@@ -1,34 +1,37 @@
 console.log("mail.js script")
 const nodemailer = require('nodemailer');
 const mailGun = require('nodemailer-mailgun-transport');
+require('dotenv').config();
 
 const auth = {
     auth: {
-        api_key: 'd2635f650c0e99d0b8e6638e6d66547b-a65173b1-42b693b0',
-        domain: 'sandbox6dea089437704590bb56058b01be1025.mailgun.org'
+        user: process.env. api_key,
+        pass: process.env.domain
     }
 };
 
+let transporter = nodemailer.createTransport(auth);
+
+
 const transporter= nodemailer.createTransport(mailGun(auth));
 
-const sendMail = (data) => {
-    formFills = JSON.stringify(data);
-    console.log( "in sendmail function", formFills)
-    
+const sendMail = (email, subject, text, ) => {
+   
     const mailOptions = {
-        from: formFills.email, 
+        from: "ameliaaltman22@gmail.com", 
         to: "ameliaaltman22@gmail.com",
-        subject: formFills.subject,
-        text: formFills.text ,
+        subject: subject,
+        formEmail: email,
+        text: text ,
     };
     
     transporter.sendMail(mailOptions, function(err, data){
         if(err) {
             console.log("error,", err)
-            cb(err, null);
+            (err, null);
         } else {
             console.log ("Message Sent")
-            cb(null, data);
+            (null, data);
         }
     });
 };

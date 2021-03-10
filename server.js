@@ -28,20 +28,17 @@ app.use(express.static("public"));
 //===============================================================
 app.post('/MailDataServer', (req, res) => {
 
-  console.log('upload route hit', req.body )
+  const {subject, email, text}= req.body;
+  console.log('server post route hit', req.body )
 
-   MailData(req, res, (err) =>{
-      if(err){
-          alert(err)
-      } else {
-      //     console.log( "File name & info" + " " + );
-          // res.send("test")
-          body = JSON.stringify(req.body)
-          console.log("data received at server", body)
-          res.json({message:'message received!'})
-          sendMail(req.body,)
-      }
-  }) 
+   sendMail(subject, email, text, function(err,data){
+     if(err){
+     res.status(500).json({ message: 'internal Error'});
+   }else{
+      res.json({ message: 'Email Sent!!'});
+   }
+   });
+
 })
 
 // HTML Routes
