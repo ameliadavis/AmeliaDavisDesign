@@ -5,12 +5,12 @@ require('dotenv').config();
 
 const auth = {
     auth: {
-        user: process.env. api_key,
-        pass: process.env.domain
+        // api_key: process.env. api_key,
+        // domain: process.env.domain
+        api_key: 'd2635f650c0e99d0b8e6638e6d66547b-a65173b1-42b693b0',
+        domain: 'sandbox6dea089437704590bb56058b01be1025.mailgun.org'
     }
 };
-
-
 
 const transporter= nodemailer.createTransport(mailGun(auth));
 
@@ -26,11 +26,9 @@ const sendMail = (email, subject, text, ) => {
     
     transporter.sendMail(mailOptions, function(err, data){
         if(err) {
-            console.log("error,", err)
-            (err, null);
+           console.log('Error: ', err)
         } else {
             console.log ("Message Sent")
-            (null, data);
         }
     });
 };
