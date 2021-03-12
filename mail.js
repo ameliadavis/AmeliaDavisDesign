@@ -31,6 +31,8 @@ const sendMail = (email, subject, text, ) => {
             console.log ("Message Sent")
         }
     });
+
+    alert("Thank you for your email!");
 };
 
 module.exports = sendMail;
