@@ -43,8 +43,12 @@ app.post('/MailDataServer', (req, res) => {
 
 // HTML Routes
 //  ================================================================
+// app.get('/', (req, res)=>{
+//   res.sendFile(path.join(__dirname,'./public', 'index.html'));
+// })
+
 app.get('/', (req, res)=>{
-  res.sendFile(path.join(__dirname,'/public', 'index.html'));
+  res.sendFile( __dirname +'/index.html');
 })
 
 app.get("/MyWork", function(req, res) {
