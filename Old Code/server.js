@@ -13,7 +13,7 @@ var PORT = process.env.PORT || 8080;
 
 // Requiring our models for syncing
 var db = require("./models");
-const sendMail = require('../public/js/mail')
+const sendMail = require('../js/mail')
 
 var path = require("path");
 
