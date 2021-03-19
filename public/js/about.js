@@ -7,16 +7,27 @@ $('form').on('submit', (e) => {
     const subject =$('#Subject').val().trim();
     const text = $('#text').val().trim();
 
-    const data = {
-        email, 
-        subject,
-        text, 
-    }
+    // const data = {
+    //     email, 
+    //     subject,
+    //     text, 
+    // }
 
-    $.post('/MailDataServer', data, function() {
-        console.log("this data is being sent to the server", data)
+    // $.post('/MailDataServer', data, function() {
+    //     console.log("this data is being sent to the server", data)
         
-    })
+    // })
+    const {subject, email, text}= req.body;
+        console.log('server post route hit', req.body )
+
+        sendMail(subject, email, text, function(err,data){
+            if(err){
+            res.status(500).json({ message: 'internal Error'});
+        }else{
+            res.json({ message: 'Email Sent!!'});
+        }
+   });
+
 })
 
 
